@@ -12,6 +12,20 @@
       function telephoneCheck(str) {
         const regex = /^(1\s?)?(\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}$/;
 
+        /*
+        ^ proč je tam negace???
+        (1\s?)? může tam být whitespace a nemusí, může tam být skupina "1 " a nemusí
+        (\(\d{3}\)|\d{3}):
+          \(\d{3}\) (3 digits)
+          | nebo
+          \d{3} 3 digits
+        [\s\-]? může tam být whitespace nebo pomlčka, ale nemusí
+        \d{3} 3 digits
+        [\s\-]? může tam být whitespace nebo pomlčka, ale nemusí
+        \d{4}$ 4 digits at the end of the string
+        */
+
+
         if (regex.test(str)) {
           return true;
         }
